@@ -14,12 +14,12 @@ route.post('/signup', function (req, res) {
     if (!req.body.username || !req.body.password) {
         res.json({ success: false, msg: 'Please pass name and password.' });
     } else {
-        usuarioController.registrarUsuario(req, res);
+        usuarioController.registerUser(req, res);
     }
 });
 
 route.post('/authenticate', function (req, res) {
-    usuarioController.getUsuario(req, res);
+    usuarioController.getUser(req, res);
 });
 
 route.get('/memberinfo', passport.authenticate('jwt', { session: false }), function (req, res) {

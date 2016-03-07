@@ -19,9 +19,6 @@ mongoose.connect(config.connString);
 // pass passport for configuration
 require('./config/passport')(passport);
 
-// bundle our routes
-var apiRoutes = require('./routes/user.js');
-
 //express config
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -38,9 +35,12 @@ app.get('/', function (req, res) {
     res.send('Welcome to Cost Control!');
 });
 
-app.use('/api', apiRoutes, function (req, res) {
-    res.json({ message: 'Welcome to Control Manager API!' });
-});
+// bundle our routes
+var user = require('./routes/user.js');
+var bank = require('./routes/bank.js');
+
+app.use('/api', user);
+app.use('/api', bank);
 
 app.listen(port, function () {
     console.log('Gulp is running my app on Port: ' + port);

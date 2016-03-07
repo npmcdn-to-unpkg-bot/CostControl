@@ -5,7 +5,7 @@ var User = require('../models/user');
 var jwt = require('jwt-simple');
 var config = require('../config/database');
 
-exports.registrarUsuario = function (req, res) {
+exports.registerUser = function (req, res) {
     var user = new User({
         username: req.body.username,
         password: req.body.password
