@@ -1,0 +1,24 @@
+{
+    "name": "costcontrol",
+    "description": "Controle de Gastos",
+    "main": "server.js",
+    "moduleType": [],
+    "keywords": [
+        "control",
+        "manager",
+        "controle",
+        "gastos"
+    ],
+    "authors": [
+        "marcelo.lopesdasilva@gmail.com"
+    ],
+    "license": "MIT",
+    "homepage": "",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}

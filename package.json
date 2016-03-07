@@ -1,0 +1,47 @@
+{
+  "name": "costcontrol",
+  "version": "1.0.0",
+  "description": "Controle de Custos",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celonet/CostControl.git"
+  },
+  "keywords": [
+    "control",
+    "cost",
+    "controle",
+    "gerenciamento",
+    "custos"
+  ],
+  "author": {
+    "name": "Marcelo Lopes",
+    "email": "marcelo.lopesdasilva@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/celonet/CostControl/issues"
+  },
+  "homepage": "https://github.com/celonet/CostControl#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jwt-simple": "^0.4.1",
+    "mongoose": "^4.4.6",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-env": "^0.4.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nodemon": "^2.0.6",
+    "mocha": "^2.4.5",
+    "should": "^8.2.2"
+  }
+}
