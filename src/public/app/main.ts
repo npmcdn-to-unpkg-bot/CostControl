@@ -1,4 +1,25 @@
-import {bootstrap}  from 'angular2/platform/browser';
-import {HelloWorld} from './hello_world';
+import {bootstrap}        from 'angular2/platform/browser';
+import { provide } from 'angular2/core';
+import {ROUTER_PROVIDERS} from 'angular2/router';
+import { FORM_PROVIDERS } from 'angular2/common';
+import { Http, HTTP_PROVIDERS } from 'angular2/http';
+import { AuthConfig, AuthHttp } from 'angular2-jwt';
 
-bootstrap(HelloWorld);
+import {AppComponent}     from './app.component';
+
+// Add all operators to Observable
+import 'rxjs/Rx';
+
+bootstrap(AppComponent, [
+    FORM_PROVIDERS,
+    ROUTER_PROVIDERS,
+    HTTP_PROVIDERS,
+    provide(AuthHttp, {
+        useFactory: (http) => {
+            return new AuthHttp(new AuthConfig({
+                tokenName: 'jwt'
+            }), http);
+        },
+        deps: [Http]
+    })
+]);
